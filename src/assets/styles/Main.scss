@@ -105,6 +105,18 @@
         }
       }
     }
+
+    .container-footer {
+      .text-content {
+        top: 55%;
+        width: 80%;
+
+        p {
+          line-height: 1.4;
+          margin-top: 0.5rem;
+        }
+      }
+    }
   }
 
   @include screensize($mobile) {
@@ -133,6 +145,13 @@
     .container-footer {
       .text-content {
         width: 90%;
+        bottom: 15%;
+        top: unset;
+
+        p {
+          line-height: 1.5;
+          margin-top: 1rem;
+        }
       }
     }
   }

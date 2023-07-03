@@ -48,6 +48,22 @@
     }
   }
 
+  @include screensize($tablet) {
+    padding-block: 4rem;
+
+    h2 {
+      font-size: 0.9rem;
+    }
+
+    .testimonies {
+      // grid-template-columns: repeat(2, 1fr);
+      // grid-auto-rows: auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+
   @include screensize($mobile) {
     padding-block: 4rem;
 
