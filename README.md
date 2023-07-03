@@ -6,4 +6,4 @@
 
 Thanks for checking out this front-end coding challenge.
 
-Check out live preview: [click here](https://github.com/carniel-carl/sunny-landing-page)
+Check out live preview: [click here](https://carniel-carl.github.io/sunny-landing-page/)
