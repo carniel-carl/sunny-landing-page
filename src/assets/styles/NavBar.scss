@@ -1,0 +1,144 @@
+@use "./globals/variables" as *;
+@use "./globals/breakpoints" as *;
+
+.navbar {
+  display: flex;
+  align-items: center;
+  width: 90vw;
+  margin-inline: auto;
+  position: relative;
+
+  .logo {
+    width: auto;
+  }
+
+  .navlinks {
+    margin-left: auto;
+    display: flex;
+    column-gap: 3rem;
+    li {
+      a {
+        color: $white;
+        font-weight: fw(light);
+      }
+
+      &:last-child a {
+        padding: 0.8rem 1.5rem;
+        background-color: $white;
+        border-radius: 1.8rem;
+        text-transform: uppercase;
+        color: $sec-head-clr;
+        font-family: $ff-fr;
+        font-weight: fw(regular);
+        transition: all 0.5s;
+
+        &:hover {
+          background-color: rgba($color: #fff, $alpha: 0.5);
+          color: $white;
+        }
+      }
+    }
+  }
+  .mobile-menu {
+    display: none;
+  }
+
+  @include screensize($mobile) {
+    justify-content: space-between;
+
+    .navlinks {
+      flex-direction: column;
+      align-items: center;
+      position: absolute;
+      top: 5rem;
+      right: 0;
+      width: 100%;
+      background-color: $white;
+      padding-block: 3rem;
+      row-gap: 2.5rem;
+      transform: translate(80%, -100vh) scale(0);
+      transition: all 0.7s ease-in-out 0.1s;
+      z-index: 5;
+
+      li {
+        a {
+          color: $sub-sec-head-clr;
+          font-weight: fw(light);
+        }
+
+        &:last-child a {
+          background-color: $yellow-clr;
+        }
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 0;
+        top: -8%;
+        right: 0;
+        border-right: 2.5rem solid $white;
+        border-top: 2.5rem solid transparent;
+      }
+
+      &.show-sidebar {
+        transform: translate(0) scale(1);
+        transition: all 0.7s cubic-bezier(0.68, -0.055, 0.265, 1.55);
+      }
+    }
+
+    // MENU HAMBURGER STYLE
+    .mobile-menu {
+      display: flex;
+      width: 2rem;
+      height: 2rem;
+      align-items: center;
+      position: relative;
+
+      &__icon {
+        width: 100%;
+        height: 0.2rem;
+        background-color: $white;
+        border-radius: 0.2rem;
+        transition: all 0.5s;
+
+        &::before,
+        &::after {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 0.2rem;
+          background-color: $white;
+          border-radius: 0.2rem;
+          transition: all 0.5s;
+        }
+
+        &::before {
+          top: 20%;
+        }
+        &::after {
+          bottom: 20%;
+        }
+      }
+
+      &.open {
+        .mobile-menu__icon {
+          width: 0;
+          height: 0;
+
+          &::before {
+            top: 50%;
+            transform: rotate(225deg) translateY(0);
+            transform-origin: center;
+          }
+          &::after {
+            bottom: 50%;
+            transform: rotate(-225deg) translate(5%, -20%);
+            transform-origin: center;
+          }
+        }
+      }
+    }
+  }
+}

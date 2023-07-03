@@ -1,0 +1,11 @@
+@use "./globals/variables" as *;
+@use "./globals/breakpoints" as *;
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  @include screensize($mobile) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

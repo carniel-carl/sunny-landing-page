@@ -1,0 +1,7 @@
+@use "./variables" as *;
+
+@mixin screensize($size) {
+  @media screen and (max-width: $size) {
+    @content;
+  }
+}

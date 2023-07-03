@@ -1,0 +1,43 @@
+// PRIMARY COLOUR
+$soft-red-clr: hsl(7, 99%, 70%);
+$yellow-clr: hsl(51, 100%, 49%);
+$grph-txt-clr: hsl(167, 40%, 24%);
+$pht-txt-clr: hsl(198, 62%, 26%);
+$ftr-txt-clr: hsl(168, 34%, 41%);
+
+:root {
+  --soft-red-clr: hsl(7, 99%, 70%);
+  --yellow-clr: hsl(51, 100%, 49%);
+  --grph-txt-clr: hsl(167, 40%, 24%);
+  --pht-txt-clr: hsl(198, 62%, 26%);
+}
+
+// NEUTRAL COLOUR
+
+$sec-head-clr: hsl(212, 27%, 19%);
+$tes-clr: hsl(213, 9%, 39%);
+$sub-sec-head-clr: hsl(232, 10%, 55%);
+$tes-head-clr: hsl(210, 4%, 67%);
+$white: hsl(0, 0%, 100%);
+
+// FONTS
+
+$ff-bar: "Barlow", sans-serif;
+$ff-fr: "Fraunces", serif;
+
+$fontw: (
+  "light": 600,
+  "regular": 700,
+  "bold": 900,
+);
+
+// SCREEN SIZES
+
+$mobile: 32rem;
+$tablet: 64rem;
+
+// FUNCTIONS
+
+@function fw($weight) {
+  @return map-get($fontw, $weight);
+}
